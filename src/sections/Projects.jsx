@@ -1,71 +1,167 @@
+import acInstallation from "../assets/images/ac-installation.jpg";
+import acRepair from "../assets/images/ac-repair.jpg";
+import refrigeratorRepair from "../assets/images/refrigerator-repair.jpg";
+import waterCooler from "../assets/images/water-cooler.jpg";
+import washingMachine from "../assets/images/washing-machine.jpg";
+import amcpmc from "../assets/images/amc-pmc.jpg";
+
 function Projects() {
   const projects = [
     {
       title: "AC Installation",
-      location: "Virudhunagar",
+      image: acInstallation,
     },
     {
       title: "AC Repair Service",
-      location: "Virudhunagar",
+      image: acRepair,
     },
     {
       title: "Refrigerator Repair",
-      location: "Virudhunagar",
+      image: refrigeratorRepair,
     },
     {
       title: "Water Cooler Service",
-      location: "Virudhunagar",
+      image: waterCooler,
     },
     {
       title: "Washing Machine Service",
-      location: "Virudhunagar",
+      image: washingMachine,
     },
     {
       title: "AMC & PMC Maintenance",
-      location: "Commercial Site",
+      image: amcpmc,
     },
   ];
 
   return (
-    <section id="projects" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold">
-            OUR RECENT WORKS
+    <section
+      id="projects"
+      className="py-20 lg:py-24 bg-white"
+    >
+      <div className="max-w-7xl mx-auto px-5 lg:px-6">
+
+        {/* Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+
+          <span
+            className="
+            inline-block
+            bg-blue-100
+            text-blue-600
+            px-5
+            py-2
+            rounded-full
+            font-semibold
+            text-sm
+            "
+          >
+            OUR WORKS
           </span>
 
-          <h2 className="text-4xl font-bold mt-4">
-            Quality Work You Can Trust
+          <h2
+            className="
+            text-4xl
+            lg:text-5xl
+            font-extrabold
+            text-slate-900
+            mt-5
+            "
+          >
+            Recent Projects
           </h2>
 
-          <p className="text-gray-600 mt-4">
-            Take a look at some of our recent installation,
-            repair and maintenance projects.
+          <p
+            className="
+            text-slate-600
+            text-lg
+            mt-5
+            leading-8
+            "
+          >
+            A glimpse of our installation, repair and maintenance
+            services completed for residential and commercial clients.
           </p>
+
         </div>
 
+        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {projects.map((project, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition"
+              className="
+              relative
+              overflow-hidden
+              rounded-3xl
+              shadow-lg
+              group
+              h-[320px]
+              "
             >
-              {/* Image Placeholder */}
-              <div className="h-60 bg-blue-100 flex items-center justify-center">
-                📷 Project Photo
-              </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold">
+              {/* Image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="
+                w-full
+                h-full
+                object-cover
+                group-hover:scale-110
+                transition-all
+                duration-700
+                "
+              />
+
+              {/* Overlay */}
+              <div
+                className="
+                absolute
+                inset-0
+                bg-gradient-to-t
+                from-black/80
+                via-black/30
+                to-transparent
+                "
+              ></div>
+
+              {/* Content */}
+              <div
+                className="
+                absolute
+                bottom-0
+                left-0
+                right-0
+                p-6
+                "
+              >
+
+                <h3
+                  className="
+                  text-white
+                  text-2xl
+                  font-bold
+                  "
+                >
                   {project.title}
                 </h3>
 
-                <p className="text-gray-500 mt-2">
-                  {project.location}
-                </p>
+                <div
+                  className="
+                  w-12
+                  h-1
+                  bg-blue-500
+                  rounded-full
+                  mt-3
+                  group-hover:w-24
+                  transition-all
+                  duration-500
+                  "
+                ></div>
+
               </div>
+
             </div>
           ))}
 

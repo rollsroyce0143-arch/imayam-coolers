@@ -1,99 +1,129 @@
 import aboutImage from "../assets/images/about.jpg";
+
 function About() {
+  const features = [
+    "Fast Response Service",
+    "Affordable Pricing",
+    "Customer Satisfaction",
+  ];
+
   return (
     <section
       id="about"
       className="py-24 bg-slate-50"
     >
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
-        {/* Left Side Image */}
-        <div className="relative">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          <div className="h-[500px] rounded-3xl overflow-hidden">
+          {/* Left Image */}
+          <div className="relative">
 
-  <img
-    src={aboutImage}
-    alt="IMAYAM Coolers"
-    className="
-      w-full
-      h-full
-      object-cover
-    "
-  />
+            <div className="h-[350px] sm:h-[450px] lg:h-[550px] rounded-3xl overflow-hidden shadow-xl">
 
-</div>
+              <img
+                src={aboutImage}
+                alt="IMAYAM Coolers"
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  hover:scale-105
+                  transition-all
+                  duration-700
+                "
+              />
 
-          {/* Floating Badge */}
-          <div className="absolute bottom-6 left-6 bg-white px-5 py-3 rounded-2xl shadow-lg">
-            <p className="font-semibold text-slate-800">
-              Trusted Local Service
-            </p>
-            <p className="text-sm text-slate-500">
-              Reliable & Professional
-            </p>
+            </div>
+
+            {/* Floating Badge */}
+            <div
+              className="
+                absolute
+                bottom-5
+                left-5
+                bg-white/95
+                backdrop-blur-md
+                px-5
+                py-4
+                rounded-2xl
+                shadow-xl
+              "
+            >
+              <p className="font-bold text-slate-900">
+                Trusted Local Service
+              </p>
+
+              <p className="text-sm text-slate-500 mt-1">
+                Reliable & Professional
+              </p>
+            </div>
+
           </div>
 
-        </div>
+          {/* Right Content */}
+          <div>
 
-        {/* Right Side Content */}
-        <div>
+            <span className="text-blue-600 font-semibold tracking-wider">
+              ABOUT IMAYAM COOLERS
+            </span>
 
-          <span className="text-blue-600 font-semibold tracking-wide">
-            ABOUT IMAYAM COOLERS
-          </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 leading-tight text-slate-900">
+              Professional Cooling &
+              Refrigeration Experts
+            </h2>
 
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 leading-tight text-slate-900">
-            Professional Cooling &
-            Refrigeration Experts
-          </h2>
+            <p className="text-slate-600 mt-6 leading-8 text-base md:text-lg">
+              
 
-          <p className="text-slate-600 mt-6 leading-8 text-lg">
-            IMAYAM Coolers provides professional AC installation,
-            repair, maintenance and cooling system services.
-            We focus on delivering reliable, affordable and
-            customer-friendly solutions for homes, offices and
-            commercial spaces.
-          </p>
+              We focus on delivering reliable, affordable and
+              customer-friendly solutions for homes, offices and
+              commercial spaces while maintaining the highest
+              standards of workmanship.
+            </p>
 
-          {/* Features */}
-          <div className="mt-10 space-y-5">
+            {/* Features */}
+            <div className="mt-10 space-y-4">
 
-            
+              {features.map((item, index) => (
+                <div
+                  key={index}
+                  className="
+                    flex
+                    items-center
+                    gap-4
+                    bg-white
+                    p-4
+                    rounded-2xl
+                    shadow-sm
+                    hover:shadow-lg
+                    hover:-translate-y-1
+                    transition-all
+                    duration-300
+                  "
+                >
 
-            <div className="flex items-center gap-4">
+                  <div
+                    className="
+                      w-10
+                      h-10
+                      rounded-full
+                      bg-slate-200
+                      flex
+                      items-center
+                      justify-center
+                      font-bold
+                    "
+                  >
+                    ✓
+                  </div>
 
-              <div className="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center font-bold">
-                ✓
-              </div>
+                  <span className="font-medium text-slate-800">
+                    {item}
+                  </span>
 
-              <span className="text-lg">
-                Fast Response Service
-              </span>
-
-            </div>
-
-            <div className="flex items-center gap-4">
-
-              <div className="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center font-bold">
-                ✓
-              </div>
-
-              <span className="text-lg">
-                Affordable Pricing
-              </span>
-
-            </div>
-
-            <div className="flex items-center gap-4">
-
-              <div className="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center font-bold">
-                ✓
-              </div>
-
-              <span className="text-lg">
-                Customer Satisfaction
-              </span>
+                </div>
+              ))}
 
             </div>
 

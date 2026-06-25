@@ -16,9 +16,7 @@ Phone: ${phone}
 Service Requirement:
 ${message}`;
 
-    const url = `https://wa.me/919943411852?text=${encodeURIComponent(
-      text
-    )}`;
+    const url = `https://wa.me/919943411852?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank");
   };
@@ -26,97 +24,149 @@ ${message}`;
   return (
     <section
       id="contact"
-      className="py-24 bg-slate-50"
+      className="py-20 lg:py-24 bg-slate-50"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 lg:px-6">
 
         {/* Heading */}
-        <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+
+          <span
+            className="
+            inline-block
+            bg-blue-100
+            text-blue-600
+            px-5
+            py-2
+            rounded-full
+            font-semibold
+            text-sm
+            "
+          >
             CONTACT US
           </span>
 
-          <h2 className="text-4xl font-bold mt-4">
-            Get In Touch
+          <h2
+            className="
+            text-4xl
+            lg:text-5xl
+            font-extrabold
+            text-slate-900
+            mt-5
+            "
+          >
+            Let's Talk About Your Service Needs
           </h2>
 
-          <p className="text-gray-600 mt-4">
+          <p
+            className="
+            text-slate-600
+            text-lg
+            mt-5
+            leading-8
+            "
+          >
             Need AC installation, repair or maintenance?
-            Contact us today.
+            Contact us today for quick and reliable support.
           </p>
+
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+        {/* Grid */}
+        <div className="grid lg:grid-cols-2 gap-8">
 
           {/* Left Side */}
-          <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col justify-between">
+          <div
+            className="
+            bg-white
+            rounded-3xl
+            p-8
+            shadow-lg
+            flex
+            flex-col
+            justify-between
+            "
+          >
 
             <div>
-              <h3 className="text-2xl font-bold mb-8">
+
+              <h3 className="text-2xl font-bold text-slate-900 mb-8">
                 Contact Information
               </h3>
 
-              <div className="space-y-8">
+              <div className="space-y-5">
 
-                <div>
-                  <h4 className="font-semibold text-lg">
+                <div className="bg-slate-50 p-5 rounded-2xl">
+                  <h4 className="font-bold text-slate-900">
                     📞 Phone
                   </h4>
 
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-slate-600 mt-2">
                     +91 99434 11852
                   </p>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-lg">
+                <div className="bg-slate-50 p-5 rounded-2xl">
+                  <h4 className="font-bold text-slate-900">
                     📍 Location
                   </h4>
 
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-slate-600 mt-2">
                     Virudhunagar, Tamil Nadu
                   </p>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-lg">
+                <div className="bg-slate-50 p-5 rounded-2xl">
+                  <h4 className="font-bold text-slate-900">
                     💬 WhatsApp
                   </h4>
 
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-slate-600 mt-2">
                     Available for quick support
                   </p>
                 </div>
 
               </div>
+
             </div>
 
-            <div className="mt-10">
-              <a
-                href="https://wa.me/919943411852"
-                target="_blank"
-                rel="noreferrer"
-                className="
-                  block
-                  text-center
-                  w-full
-                  bg-green-600
-                  hover:bg-green-700
-                  text-white
-                  py-3
-                  rounded-lg
-                  font-semibold
-                  transition
-                "
-              >
-                Chat on WhatsApp
-              </a>
-            </div>
+            <a
+              href="https://wa.me/919943411852"
+              target="_blank"
+              rel="noreferrer"
+              className="
+              mt-8
+              text-center
+              bg-green-600
+              hover:bg-green-700
+              text-white
+              py-4
+              rounded-2xl
+              font-semibold
+              transition-all
+              duration-300
+              shadow-lg
+              hover:-translate-y-1
+              "
+            >
+              Chat on WhatsApp
+            </a>
 
           </div>
 
           {/* Right Side */}
-          <div className="bg-white p-8 rounded-2xl shadow-md">
+          <div
+            className="
+            bg-white
+            p-8
+            rounded-3xl
+            shadow-lg
+            "
+          >
+
+            <h3 className="text-2xl font-bold mb-6">
+              Send Enquiry
+            </h3>
 
             <form
               onSubmit={sendWhatsApp}
@@ -128,8 +178,16 @@ ${message}`;
                 placeholder="Your Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border rounded-lg p-3 outline-none focus:border-blue-600"
                 required
+                className="
+                w-full
+                border
+                border-slate-200
+                rounded-xl
+                p-4
+                outline-none
+                focus:border-blue-500
+                "
               />
 
               <input
@@ -137,30 +195,49 @@ ${message}`;
                 placeholder="Phone Number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full border rounded-lg p-3 outline-none focus:border-blue-600"
                 required
+                className="
+                w-full
+                border
+                border-slate-200
+                rounded-xl
+                p-4
+                outline-none
+                focus:border-blue-500
+                "
               />
 
               <textarea
-                rows="5"
+                rows="6"
                 placeholder="Describe Your Service Requirement"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full border rounded-lg p-3 outline-none focus:border-blue-600"
                 required
-              ></textarea>
+                className="
+                w-full
+                border
+                border-slate-200
+                rounded-xl
+                p-4
+                outline-none
+                focus:border-blue-500
+                "
+              />
 
               <button
                 type="submit"
                 className="
-                  w-full
-                  bg-blue-600
-                  hover:bg-blue-700
-                  text-white
-                  py-3
-                  rounded-lg
-                  font-semibold
-                  transition
+                w-full
+                bg-blue-600
+                hover:bg-blue-700
+                text-white
+                py-4
+                rounded-xl
+                font-semibold
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                shadow-lg
                 "
               >
                 Send Enquiry
