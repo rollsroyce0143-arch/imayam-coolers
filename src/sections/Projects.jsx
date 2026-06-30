@@ -58,17 +58,7 @@ function Projects() {
             OUR WORKS
           </span>
 
-          <h2
-            className="
-            text-4xl
-            lg:text-5xl
-            font-extrabold
-            text-slate-900
-            mt-5
-            "
-          >
-            Recent Projects
-          </h2>
+          
 
           <p
             className="
